@@ -10,9 +10,13 @@ export const AppLayout = () => {
   const variant = user ? 'auth' : 'unauth'
   return (
     <>
-      <Header variant={variant} userName={user?.name} avatarUrl={user?.avatar} />
+      <Header variant={variant} />
       <main className={styles.main}>
         <div className={styles.content}>
+          <div className={styles.demoNotice} role="status">
+            Демо-режим: данные сохраняются только в этом браузере и не передаются другим
+            пользователям. Не вводите настоящие пароли или личные данные.
+          </div>
           <Outlet />
         </div>
       </main>
