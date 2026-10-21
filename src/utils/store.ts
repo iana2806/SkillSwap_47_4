@@ -1,7 +1,6 @@
 import { categoriesReducer } from '@/store/categories'
 import { citiesReducer } from '@/store/cities'
 import { filterReducer } from '@/store/filter'
-import type { TGender, TRole } from '@/utils'
 import { configureStore } from '@reduxjs/toolkit'
 
 import { data as categoriesData } from '../../mock/api/categories'
@@ -9,6 +8,15 @@ import { data as citiesData } from '../../mock/api/cities'
 
 const { categories, subcategories } = categoriesData ?? {}
 const { cities } = citiesData ?? {}
+
+const preloadedFilterState: ReturnType<typeof filterReducer> = {
+  role: 'learn',
+  subcategories: [],
+  gender: 'female',
+  cities: [],
+  search: '',
+  sort: { by: '', direction: 'desc' },
+}
 
 export const mockStore = configureStore({
   reducer: {
@@ -28,13 +36,6 @@ export const mockStore = configureStore({
       error: null,
       cities,
     },
-    filter: {
-      role: 'learn' as TRole,
-      subcategories: [],
-      gender: 'female' as TGender,
-      cities: [],
-      search: '',
-      sort: { by: '', direction: 'desc' },
-    },
+    filter: preloadedFilterState,
   },
 })
