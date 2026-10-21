@@ -47,5 +47,6 @@
     "./.storybook/*.ts",
     "./commitlint.config.js",
     "./.prettierrc.js"
-  ]
+  ],
+  "exclude": ["src/**/*.stories.ts", "src/**/*.stories.tsx"]
 }
