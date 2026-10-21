@@ -1,5 +1,5 @@
 export { Avatar } from './Avatar/Avatar'
-export { Badge } from './Badge/Badge'
+export { Badge } from './badge/Badge'
 export { Checkbox } from './Checkbox/Checkbox'
 export { DateInput } from './DateInput/DateInput'
 export { Button } from './Button/Button'
